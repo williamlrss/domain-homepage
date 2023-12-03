@@ -1,0 +1,297 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+html,
+body,
+main {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+b {
+  font-weight: 500;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    background-color: rgb(229, 229, 229);
+  }
+  .main {
+    background-color: unset;
+  }
+  .hide-in-mobile-view {
+    display: none;
+  }
+  .hide-in-desktop-view {
+    display: block;
+    width: 100%;
+    height: 45%;
+    position: absolute;
+  }
+  .carousel {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .carousel div {
+    position: relative;
+    width: calc(5em + 55vw);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+  }
+  .carousel div a {
+    height: 100%;
+  }
+  .carousel div img {
+    margin: 2em 0;
+    width: 80%;
+    box-shadow: -5px 8px 5px 0px rgba(0, 0, 0, 0.3);
+  }
+}
+@media screen and (min-width: 900px) {
+  .night-mode {
+    position: fixed;
+    top: 10%;
+    right: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+  }
+  .night-mode__text {
+    color: white;
+  }
+  .night-mode__toggle {
+    display: flex;
+  }
+  .night-mode__toggle-input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  .night-mode__toggle-input:checked + .night-mode__toggle-label {
+    background-color: rgba(255, 92, 92, 0.8);
+  }
+  .night-mode__toggle-input:checked + .night-mode__toggle-label:before {
+    transform: translateX(2em);
+  }
+  .night-mode__toggle-label {
+    cursor: pointer;
+    position: relative;
+    width: 3.5em;
+    height: 1.5em;
+    background-color: rgba(204, 204, 204, 0.8);
+    border-radius: 0.75em;
+    opacity: 0.8;
+    box-shadow: 0 6px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+  .night-mode__toggle-label:before {
+    position: absolute;
+    content: "";
+    top: 0.15em;
+    left: 0.15em;
+    height: 1.2em;
+    width: 1.2em;
+    background: radial-gradient(circle at top, #0065fc, #ff5d5d, #de57e6);
+    transition: 0.4s;
+    border-radius: 50%;
+    box-shadow: 0 6px 6px 0px rgba(0, 0, 0, 0.3);
+  }
+  .hide-in-desktop-view {
+    display: none;
+  }
+  .info-panel {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    transition: 1s;
+    padding: 1em 0;
+  }
+  .info-panel__text {
+    color: white;
+    font-weight: 300;
+  }
+  .main {
+    background-color: #a6a6a6;
+  }
+  #carousel {
+    position: relative;
+    height: 400px;
+    top: 50%;
+    transform: translateY(-50%);
+    overflow: hidden;
+  }
+  #carousel div {
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    opacity: 1;
+  }
+  #carousel div img {
+    width: 400px;
+    transition: width 1s;
+  }
+  #carousel div.selected {
+    z-index: 10;
+    left: 50%;
+    transform: translateY(0px) translateX(-50%);
+  }
+  #carousel div.selected img {
+    cursor: pointer;
+  }
+  #carousel div.prev {
+    z-index: 5;
+    left: 30%;
+    transform: translateY(50px) translateX(-50%);
+  }
+  #carousel div.prev img {
+    width: 300px;
+  }
+  #carousel div.prevLeftSecond {
+    z-index: 4;
+    left: 15%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0.7;
+  }
+  #carousel div.prevLeftSecond img {
+    width: 200px;
+  }
+  #carousel div.next {
+    z-index: 5;
+    left: 70%;
+    transform: translateY(50px) translateX(-50%);
+  }
+  #carousel div.next img {
+    width: 300px;
+  }
+  #carousel div.nextRightSecond {
+    z-index: 4;
+    left: 85%;
+    transform: translateY(50%) translateX(-50%);
+    opacity: 0.7;
+  }
+  #carousel div.nextRightSecond img {
+    width: 200px;
+  }
+  #carousel div.hideLeft {
+    left: 0%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+  }
+  #carousel div.hideLeft img {
+    width: 200px;
+  }
+  #carousel div.hideRight {
+    left: 100%;
+    opacity: 0;
+    transform: translateY(50%) translateX(-50%);
+  }
+  #carousel div.hideRight img {
+    width: 200px;
+  }
+  .keyboard {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 20em;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 2%;
+    padding: 2em;
+  }
+  .keyboard__toggle {
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    right: 30%;
+    bottom: 2%;
+    padding: 0.5em;
+    border: none;
+  }
+  .keyboard--fade-in {
+    transition: 1s;
+  }
+  .keyboard--fade-on-going {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    width: 20em;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2em;
+    transition: opacity 1s;
+    bottom: 0%;
+  }
+  .keyboard--fade-out {
+    transition: 1s;
+  }
+  .keyboard__start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 25%;
+    width: 30em;
+    padding-inline: 5em;
+    border-radius: 10px;
+    background-color: black;
+    position: fixed;
+    top: -35%;
+  }
+  .keyboard__start__text {
+    color: white;
+    font-weight: 400;
+    opacity: 0.9;
+  }
+  .keyboard__credit {
+    position: fixed;
+    left: 10%;
+    bottom: 5%;
+    font-size: 1em;
+    font-weight: 300;
+    opacity: 0.7;
+  }
+  .keyboard__credit a {
+    text-decoration: none;
+  }
+  .keyboard__keys {
+    width: 8em;
+    line-height: 1;
+    opacity: 0.8;
+  }
+  .keyboard__keys__enter {
+    position: fixed;
+    top: 10%;
+    line-height: 1;
+    width: 3em;
+    right: 2%;
+    opacity: 0.8;
+    transition: 1s;
+  }
+  /* Style de base pour les images avec la classe 'active-effect' */
+  /* Animation de bordure */
+}
+@media screen and (min-width: 900px) and (max-width: 1100px) {
+  .keyboard__keys__enter {
+    right: 10%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .active-effect {
+    position: relative;
+    animation: borderGlow 2s ease-in-out infinite;
+    cursor: pointer;
+  }
+  @keyframes borderGlow {
+    0%, 100% {
+      box-shadow: 0 0 8px 3px #f0094a, 0 0 10px 3px rgba(221, 10, 136, 0.5), inset 0 0 10px rgba(255, 255, 255, 0.3);
+    }
+    50% {
+      box-shadow: 0 0 15px 6px #f0094a, 0 0 20px 5px rgba(221, 10, 136, 0.7), inset 0 0 15px rgba(255, 255, 255, 0.5);
+    }
+  }
+}/*# sourceMappingURL=main.css.map */

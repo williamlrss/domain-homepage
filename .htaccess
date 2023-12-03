@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteCond %{HTTP:Accept-Language} ^en [NC]
+RewriteRule ^$ /index_en.html [L,R=301]
+
+RewriteCond %{HTTP:Accept-Language} ^fr [NC]
+RewriteRule ^$ /index_fr.html [L,R=301]
+
+DirectoryIndex index_en.html

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="darkreader-lock" />
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="description" content="PORTFOLIO WILLIAMLRSS" />
+		<title>P O R T F O L I O</title>
+		<link rel="stylesheet" href="css/main.css" />
+		<link rel="icon" type="image/x-icon" href="favicon.ico" />
+	</head>
+	<body>
+		<header id="infoPanel" class="info-panel hide-in-mobile-view">
+			<div class="info-panel__text">Use the <b>keyboard keys.</b></div>
+		</header>
+
+		<div class="night-mode hide-in-mobile-view">
+			<p class="night-mode__text">Night mode</p>
+			<span class="night-mode__toggle hide-in-mobile-view">
+				<input class="night-mode__toggle-input" type="checkbox" id="toggle" />
+				<label class="night-mode__toggle-label" for="toggle"></label>
+			</span>
+		</div>
+
+		<main class="main">
+			<article id="carousel" class="carousel">
+				<div class="selected">
+					<a href="https://en-notion-profile.williamlrss.com" target="_blank" tabindex="0"></a>
+					<img src="./images/en-notion-profile.jpg" data-info="en-notion-profile.williamlrss.com - Skills Profile and Contact" />
+				</div>
+				<div class="prevLeftSecond">
+					<a href="https://booki.williamlrss.com" target="_blank" tabindex="0"></a>
+					<img src="./images/booki.png" data-info="booki.williamlrss.com" />
+				</div>
+
+				<div class="prev">
+					<a href="https://ohmyfood.williamlrss.com" target="_blank" tabindex="0"></a>
+					<img src="./images/ohmyfood.png" data-info="ohmyfood.williamlrss.com" />
+				</div>
+
+				<div class="hideLeft">
+					<a href="https://kanap.williamlrss.com" target="_blank" tabindex="0"></a>
+					<img src="./images/kanap.png" data-info="kanap.williamlrss.com" />
+				</div>
+
+				<div class="next">
+					<a href="https://hottakes.williamlrss.com" target="_blank" tabindex="0"></a>
+					<img src="./images/hottakes.png" data-info="hottakes.williamlrss.com" />
+				</div>
+
+				<div class="nextRightSecond">
+					<a href="https://kasa.williamlrss.com" target="_blank" tabindex="0"></a>
+					<img src="./images/kasa.png" data-info="kasa.williamlrss.com" />
+				</div>
+
+				<div class="hideRight">
+					<a href="https://en-notion-profile.williamlrss.com" target="_blank" tabindex="0"></a>
+					<img src="./images/en-notion-profile.png" data-info="en-notion-profile.williamlrss.com - Skills Profile and Contact" />
+				</div>
+			</article>
+
+			<p class="hide-in-mobile-view keyboard__credit">
+				credit:
+				<a href="https://codepen.io/dobladov/pen/ZOqOoa" target="_blank">carousel template</a>
+			</p>
+
+			<section class="hide-in-mobile-view keyboard">
+				<div class="keyboard__start keyboard--fade-out">
+					<p class="keyboard__start__text"><b>Right arrow</b> to start navigation.</p>
+				</div>
+				<img id="flashingKey" class="keyboard__keys keyboard--fade-on-going keyboard--fade-out" src="./images/right-key.png" />
+				<img id="keyboard" class="keyboard__keys keyboard--fade-in" src="./images/keyboard.png" />
+				<img id="enter" class="keyboard__keys__enter" src="./images/enter-key.png" />
+			</section>
+			<button class="keyboard__toggle hide-in-mobile-view">Hide keyboard</button>
+		</main>
+
+		<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+		<script src="js/darkMode.js"></script>
+		<script src="js/script.js"></script>
+		<script src="js/reloadFirstVisitor.js"></script>
+	</body>
+</html>
